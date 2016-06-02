@@ -57,7 +57,7 @@
       "element"   : "password_error_label",
       "attribute" : "visibility",
       "action"    : "equals",
-      "expected"  : true,
+      "expected"  : false,
       "page_object" : "linkedin_signup"
     }]
 }
