@@ -1,0 +1,63 @@
+{
+  "project" : "Fail Registering Linkedin",
+  "version" : "0.01b",
+  "test_name" : "Fail horribly at registering at Linkedin",
+  "test_group" : [ "Sanity","Login"],
+  "type" : "web_site",
+
+  "environment" : [{
+    "os": "Mac",
+    "os_version": "El Capitan",
+    "browser": "Chrome",
+    "browser_version" : "Dev",
+    "platform" : "Remote",
+    "screen_size" : "1440x990"
+  }],
+  "steps": [
+    {
+      "event": "Go To",
+      "element": null,
+      "url": "https://www.linkedin.com/"
+    },
+    {
+      "event": "Type",
+      "element": "first_name_field",
+      "value": "First Name",
+      "page_object" : "linkedin_signup"
+    },
+    {
+      "event": "Type",
+      "element": "last_name_field",
+      "value": "Last Name",
+      "page_object" : "linkedin_signup"
+    },
+    {
+      "event": "Type",
+      "element": "join_email_field",
+      "value": "test@test.com",
+      "page_object" : "linkedin_signup"
+    },
+    {
+      "event": "Click",
+      "element": "join_now_button",
+      "page_object" : "linkedin_signup"
+    }
+  ],
+  "expected_results" : [
+    {
+      "assertion" : "Expect",
+      "element"   : "password_error_label",
+      "attribute" : "existence",
+      "action"    : "equals",
+      "expected"  : true,
+      "page_object" : "linkedin_signup"
+    },
+    {
+      "assertion" : "Expect",
+      "element"   : "password_error_label",
+      "attribute" : "visibility",
+      "action"    : "equals",
+      "expected"  : true,
+      "page_object" : "linkedin_signup"
+    }]
+}

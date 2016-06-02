@@ -1,0 +1,15 @@
+{
+  "salesforce_login" : [{
+    "username_field" : "[type='email']",
+    "password_field" : "[type='password']",
+    "login_button"   : "#Login",
+    "error_label"    : "#error"
+  }],
+  "linkedin_signup"  : [{
+    "first_name_field" : "#first-name",
+    "last_name_field"  : "#last-name",
+    "join_email_field" : "#join-email",
+    "join_now_button"  : "button[type='submit']",
+    "password_error_label" : "[role='alert']"
+  }]
+}
